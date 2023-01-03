@@ -1,0 +1,55 @@
+Locator Types:
+
+1) by ID - most efficient and fast way to locate an element
+
+2) By Name - if no ID, another preferred way
+
+3) XPath - DOM structure, there can be various XPaths to locate an element
+
+4) By CSS Selector - Another useful way of finding an elemenet
+
+5) By TageName - this locator is to find an element matching a specified Tag Name
+
+6) By Class - matches the value specified by Class
+
+7) By LinkText - if there any link on the page, its super easy to locate them, but verify that link is unique
+
+In this Framework, I will be using mostly XPath, CSS Selector, sometimes By ID and By Name.
+----------------------------
+
+By Name Examples:
+By.NAME, 'k'
+
+
+
+XPATHS Examples:
+$x("//input[@type='text']")
+$x("//input[@class='nav-input']")
+$x("//div[contains(@class, 'a-row a-spacing-base')]//label[@for='ap_customer_name']")
+$x("//div[contains(@class, 'all a-spacing-top')]/span[@class='a-color-state a-text-bold']")
+
+
+---------------------------------
+#CSS SELECTORS
+
+tag#id --> $$('#twotabserachBox')
+tag.class --> $$("div.nav-search-field input.nav-input") (can use > for child)
+tag[attribute=value] --> $$("input[name='sup']") or $$("input[name*='su']") anything that is not class
+tag.class[attribute=value]
+tag1 tag2.class - tag2 with a class is inside tag1
+
+Linking to Tag:
+$$('#twotabsearchtextbox')
+or
+$$('input#twotabsearchtextbox')
+
+Linking to Class:
+$$('#twotabsearchtextbox.nav-input')
+
+to multiple classes:
+$$('#twotabsearchtextbox.nav-input.nav-progressive-attribute')
+
+$$('div.cs-help-content h1') --> keep in minds, css selector doesn't let you to link to text, better use Xpath
+
+-------------
+# my_search.send_keys("Dress", Keys.ENTER)
